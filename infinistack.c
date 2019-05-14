@@ -3,10 +3,10 @@
 #include "infinistack.h"
 
 struct Infinistack* createStack(unsigned capacity) {
-    struct Infinistack* stack = (struct Infinistack*) malloc(sizeof(struct Infinistack));
+    struct Infinistack* stack = (struct Infinistack*) calloc(1, sizeof(struct Infinistack));
     stack->capacity = capacity;
-    stack->top = -1;
-    stack->positions = malloc(sizeof(struct Vector2) * capacity);
+    stack->top = capacity;
+    stack->positions = calloc(capacity, sizeof(struct Vector2));
 
     return stack;
 };
@@ -18,14 +18,12 @@ void push(struct Infinistack* stack, int x, int y) {
     pos->y = y;
 }
 
-void peakTopN(struct Infinistack* stack, struct Vector2* output[], int count) {
+void peakTopN(struct Infinistack* stack, struct Vector2* output, int count) {
     int i;
     int idx = stack->top;
     for(i=0; i<count; i++) {
-        output[i] = &stack->positions[idx];
+        output[i] = stack->positions[idx];
 
         idx = (idx == stack->capacity-1) ? 0 : idx+1;
     }
 }
-
-

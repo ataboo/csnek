@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-lncurses
+CFLAGS=-lncurses -g
 DEPS=infinistack.h csnek.h
 
 csnek: csnek.o infinistack.o
