@@ -17,7 +17,7 @@
         struct Vector2 *positions;
     };
 
-    // Create and allocate a new stack
+    // Create a new stack
     struct Infinistack* createStack(unsigned capacity);
 
     // Push a position to the top of the stack
@@ -25,4 +25,7 @@
     
     // Get `count` positions in the `output` array
     void peakTopN(struct Infinistack* stack, struct Vector2* output, int count);
+
+    // Release any allocated memory
+    void cleanupStack(struct Infinistack *stack);
 #endif

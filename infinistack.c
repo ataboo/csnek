@@ -3,7 +3,7 @@
 #include "infinistack.h"
 
 struct Infinistack* createStack(unsigned capacity) {
-    struct Infinistack* stack = (struct Infinistack*) calloc(1, sizeof(struct Infinistack));
+    struct Infinistack* stack = (struct Infinistack*) malloc(sizeof(struct Infinistack));
     stack->capacity = capacity;
     stack->top = capacity;
     stack->positions = calloc(capacity, sizeof(struct Vector2));
@@ -26,4 +26,9 @@ void peakTopN(struct Infinistack* stack, struct Vector2* output, int count) {
 
         idx = (idx == stack->capacity-1) ? 0 : idx+1;
     }
+}
+
+void cleanupStack(struct Infinistack *stack) {
+    free(stack->positions);
+    free(stack);
 }

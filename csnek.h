@@ -55,5 +55,8 @@
     // Generate a random int between min and max
     int randInRange(int min, int max);
 
+    // Release any allocated memory
+    void cleanup();
+
 #endif
 

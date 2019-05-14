@@ -320,5 +320,11 @@ bool pointInBody(int x, int y) {
 
 int randInRange(int min, int max) {
     double factor = (double)rand() / (RAND_MAX+1u);
+
     return (int)(factor * (double)(max - min) + min);
+}
+
+void cleanup() {
+    cleanupStack(snekStack);
+    free(snekBodySegments);
 }
