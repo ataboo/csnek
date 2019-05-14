@@ -5,7 +5,7 @@
     // Time in micros between render frames
     #define U_DELTA_RENDER 1e6 / 60.0f
     // Time in micros between step frames
-    #define U_DELTA_STEP 1e6f / 20.0f
+    #define U_DELTA_STEP 1e6f / 15.0f
     
     #define GRID_WIDTH 70
     #define GRID_HEIGHT 40

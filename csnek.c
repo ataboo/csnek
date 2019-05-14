@@ -8,7 +8,6 @@
 #include "csnek.h"
 
 struct timeval lastRenderFrame, lastStepFrame, thisFrameTime;
-static enum GridState gridSquares[GRID_HEIGHT * GRID_WIDTH];
 int lastKey;
 char blankRow[GRID_WIDTH+1];
 char statusBuffer[GRID_WIDTH];
